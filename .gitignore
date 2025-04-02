@@ -1,1 +1,51 @@
-.gitattributes
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Cache and temporary files
+*.cache
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# React-specific files
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Coverage reports
+coverage/
+
+# MongoDB data
+*.lock
+dump/
+
+# Miscellaneous
+*.log
+*.pid
+*.seed
+*.pid.lock
