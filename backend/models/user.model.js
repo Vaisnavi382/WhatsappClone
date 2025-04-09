@@ -56,7 +56,7 @@ const userSchema = new Schema(
       type: String,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 userSchema.methods.generateAuthToken = function () {

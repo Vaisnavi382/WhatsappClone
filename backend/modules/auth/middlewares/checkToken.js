@@ -11,7 +11,7 @@ const checkToken = (req, res, next) => {
     console.debug("Inside checkToken, Token", token);
     console.debug(
       "Inside checkToken, Header",
-      req.headers["authorization"]?.split(" ")[1]
+      req.headers["authorization"]?.split(" ")[1],
     );
     next();
   } catch (error) {
