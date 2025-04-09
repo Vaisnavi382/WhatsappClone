@@ -6,7 +6,6 @@ import CustomError, { cookieOptions } from '../../utils/customError.js';
 export const loginUser = (req, res) => {
     const { username, password } = req.body;
     try {
-        console.log('LOGIN ')
         if (username === user.userName && password === user.password) {
             jwt.sign({ user }, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
                 if (err) {
