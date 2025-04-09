@@ -1,18 +1,18 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
-import authRoutes from './modules/auth/auth.routes.js';
-dotenv.config({ path: './.env' });
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import authRoutes from "./modules/auth/auth.routes.js";
+dotenv.config({ path: "./.env" });
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use('/auth', authRoutes);
+app.use("/auth", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
