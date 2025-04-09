@@ -1,7 +1,9 @@
 const checkToken = (req, res, next) => {
   const header = req.headers["authorization"];
   console.debug("Inside checkToken:");
-  if (typeof header !== "undefined") {
+  console.debug("Type of header:", typeof header);
+
+  try {
     console.debug("Inside checkToken, Header", header);
     const token =
       req.cookies.token || req.headers["authorization"]?.split(" ")[1];
@@ -9,15 +11,13 @@ const checkToken = (req, res, next) => {
     console.debug("Inside checkToken, Token", token);
     console.debug(
       "Inside checkToken, Header",
-      req.headers["authorization"]?.split(" ")[1],
+      req.headers["authorization"]?.split(" ")[1]
     );
     next();
-  } else {
+  } catch (error) {
     console.error("Inside checkToken, invalid header");
-    res.sendStatus(403);
+    return res.sendStatus(403);
   }
-
-  next();
 };
 
 export default checkToken;
