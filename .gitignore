@@ -1,6 +1,9 @@
 # Node.js dependencies
 node_modules/
 
+#secrets
+secrets/
+
 # Logs
 logs/
 *.log
