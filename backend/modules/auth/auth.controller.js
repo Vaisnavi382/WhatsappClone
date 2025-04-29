@@ -1,4 +1,10 @@
-import { loginUser, userData, logoutUser, signupUser } from "./auth.service.js";
+import {
+  loginUser,
+  userData,
+  logoutUser,
+  signupUser,
+  userByEmail,
+} from "./auth.service.js";
 
 export const signup = (req, res) => {
   signupUser(req, res);
@@ -14,4 +20,8 @@ export const getUserData = (req, res) => {
 
 export const logout = (req, res) => {
   logoutUser(req, res);
+};
+
+export const getUserByEmail = (req, res) => {
+  userByEmail(req, res);
 };
