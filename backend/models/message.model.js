@@ -12,7 +12,7 @@ const messageSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true,
-      }
+      },
     ],
     content: {
       type: String,
@@ -33,7 +33,7 @@ const messageSchema = new Schema(
       default: "sent",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Message = model("Message", messageSchema);
