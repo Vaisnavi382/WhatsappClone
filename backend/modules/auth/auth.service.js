@@ -19,7 +19,7 @@ export const signupUser = async (req, res) => {
     if (!isFieldValid)
       throw new CustomError(
         StatusCodes.BAD_REQUEST,
-        STATUS_MESSAGES.FIELD_VALIDATION_ERROR
+        STATUS_MESSAGES.FIELD_VALIDATION_ERROR,
       );
 
     const isUser = await user.findOne({
@@ -28,7 +28,7 @@ export const signupUser = async (req, res) => {
     if (isUser)
       throw new CustomError(
         StatusCodes.BAD_REQUEST,
-        STATUS_MESSAGES.USER_ALREADY_EXISTS
+        STATUS_MESSAGES.USER_ALREADY_EXISTS,
       );
 
     const hashedPassword = await user.hashPassword(password);
@@ -78,21 +78,21 @@ export const loginUser = async (req, res) => {
     if (!isFieldValid)
       throw new CustomError(
         StatusCodes.UNAUTHORIZED,
-        STATUS_MESSAGES.FIELD_VALIDATION_ERROR
+        STATUS_MESSAGES.FIELD_VALIDATION_ERROR,
       );
 
     const isUser = await user.findOne({ email });
     if (!isUser)
       throw new CustomError(
         StatusCodes.UNAUTHORIZED,
-        STATUS_MESSAGES.INVALID_CREDENTIALS
+        STATUS_MESSAGES.INVALID_CREDENTIALS,
       );
 
     const isPasswordValid = await isUser.comparePassword(password);
     if (!isPasswordValid)
       throw new CustomError(
         StatusCodes.UNAUTHORIZED,
-        STATUS_MESSAGES.INVALID_CREDENTIALS
+        STATUS_MESSAGES.INVALID_CREDENTIALS,
       );
 
     const loggedInUser = await user.findById(isUser._id).select("-password");
@@ -119,7 +119,7 @@ export const logoutUser = (req, res) => {
     if (!req.token)
       throw new CustomError(
         StatusCodes.FORBIDDEN,
-        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR
+        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR,
       );
     res
       .clearCookie("token", cookieOptions)

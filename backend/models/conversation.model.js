@@ -16,7 +16,7 @@ const conversationSchema = new Schema(
       },
     ],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Conversation = model("Conversation", conversationSchema);

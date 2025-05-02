@@ -31,7 +31,7 @@ const messageSchema = new Schema(
       default: "sent",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Message = model("Message", messageSchema);

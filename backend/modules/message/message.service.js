@@ -9,7 +9,7 @@ export const sendMessages = async (req, res) => {
     if (!req.token) {
       throw new CustomError(
         StatusCodes.FORBIDDEN,
-        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR
+        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR,
       );
     }
 
@@ -55,7 +55,7 @@ export const getMessages = async (req, res) => {
     if (!req.token) {
       throw new CustomError(
         StatusCodes.FORBIDDEN,
-        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR
+        STATUS_MESSAGES.PROTECTED_ROUTE_ERROR,
       );
     }
 
