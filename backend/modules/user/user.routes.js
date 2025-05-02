@@ -4,7 +4,7 @@ import { getUserByEmail, getUserData } from "./user.controller.js";
 
 const router = express.Router();
 
-router.get("/user", checkToken, getUserData);
-router.get("/user/email", checkToken, getUserByEmail);
+router.get("/", checkToken, getUserData);
+router.get("/email", checkToken, getUserByEmail);
 
 export default router;
