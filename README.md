@@ -132,9 +132,17 @@ WhatsApp Clone
           }
           ```
 
-      - `Get user by ID`:
+      - `Get user by email id`:
         - *Method*: `GET`
         - *Endpoint*: `/api/user/email`
+        - - *Request Body*:
+
+          ```json
+          {
+            "email": String
+          }
+          ```
+
         - *Response*:
 
           ```json
